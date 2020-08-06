@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">foodie</string>
+
+    <string-array name="foodNames">
+        <item>Carrot</item>
+        <item>Milk</item>
+        <item>Potato</item>
+    </string-array>
+
+    <string-array name="foodTimes">
+        <item>expired</item>
+        <item>1 day old</item>
+        <item>2 days old</item>
+        <item>3 day old</item>
+        <item>expiring in 3 days</item>
+        <item>expiring in 2 days</item>
+        <item>expiring in 1 day</item>
+    </string-array>
 </resources>
