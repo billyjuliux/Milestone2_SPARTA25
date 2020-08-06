@@ -96,4 +96,31 @@
                 app:layout_constraintVertical_bias="0.978"
                 app:srcCompat="@drawable/ic_card_giftcard_white_48dp" />
 
+    <Spinner
+        android:id="@+id/donate_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:entries="@array/location_arrays"
+        android:prompt="@string/donate_prompt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <Button
+        android:id="@+id/submit_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="@string/donate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
