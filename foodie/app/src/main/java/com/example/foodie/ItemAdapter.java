@@ -14,10 +14,12 @@ public class ItemAdapter extends BaseAdapter {
     LayoutInflater mInflater;
     ListView yourfoodListView;
     String[] foodNames, foodTimes;
+    int index;
 
-    public ItemAdapter (Context c, String[] n, String[] t){
+    public ItemAdapter (Context c, String[] n, String[] t, int  i){
         foodNames = n;
         foodTimes = t;
+        index = i;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -44,7 +46,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView timesTV = (TextView) v.findViewById(R.id.timesTV);
 
         String name = foodNames[i];
-        String time = foodTimes[1];
+        String time = foodTimes[index];
 
         namesTV.setText(name);
         timesTV.setText(time);
