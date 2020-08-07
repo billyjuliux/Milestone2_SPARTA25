@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final Button recipesNav = (Button) findViewById(R.id.recipesNav);
+        recipesNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesLayout = new Intent(getApplicationContext(), Recipes.class);
+                startActivity(toRecipesLayout);
+            }
+        });
+
         Resources res = getResources();
         yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
         foodNames = res.getStringArray(R.array.foodNames);
