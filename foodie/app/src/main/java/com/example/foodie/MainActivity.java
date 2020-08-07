@@ -3,6 +3,7 @@ package com.example.foodie;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
                 if (counter<8) {
                     counter++;
+                    ItemAdapter itemAdapter= new ItemAdapter(context, foodNames, foodTimes, counter);
+                    yourfoodListView.setAdapter(itemAdapter);
                 }
-                ItemAdapter itemAdapter= new ItemAdapter(context, foodNames, foodTimes, counter);
-                yourfoodListView.setAdapter(itemAdapter);
             }
         };
         registerReceiver(minuteUpdateReceiver, intentFilter);
@@ -66,7 +67,17 @@ public class MainActivity extends AppCompatActivity {
         foodNames = res.getStringArray(R.array.foodNames);
         foodTimes = res.getStringArray(R.array.foodTimes);
 
+        ItemAdapter itemAdapter= new ItemAdapter(this, foodNames, foodTimes, counter);
+        yourfoodListView.setAdapter(itemAdapter);
 
+        Button btnAdd = (Button) findViewById(R.id.btnAdd);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
