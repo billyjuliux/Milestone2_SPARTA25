@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCF9FF"
-    tools:context=".MainActivity">
+    tools:context=".donate">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:id="@+id/addbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/round_button"
         android:foreground="@drawable/addbutton"
         android:foregroundGravity="center_vertical|center_horizontal"
@@ -19,108 +17,163 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.621" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="417dp"
-        android:layout_height="194dp"
-        android:layout_marginBottom="608dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/rectangle_448" />
+        app:srcCompat="@drawable/redrectopparent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="180dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="24dp"
-        android:text="Donate"
+        android:layout_width="148dp"
+        android:layout_height="54dp"
+        android:text="@string/donate"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
     <ImageView
         android:id="@+id/imageView6"
+        android:layout_width="539dp"
+        android:layout_height="73dp"
+        android:background="@drawable/rectangle_449"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rectangle_449"
-        android:layout_width="539dp"
-        android:layout_height="73dp"
-        android:background="@drawable/rectangle_449"
         tools:layout_editor_absoluteX="-39dp"
         tools:layout_editor_absoluteY="656dp" />
-
-            <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.799"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.976"
-            app:srcCompat="@drawable/ic_room_service_white_3x" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/ic_kitchen_white_18dp" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.202"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.978"
-                app:srcCompat="@drawable/ic_card_giftcard_white_48dp" />
 
     <Spinner
         android:id="@+id/donate_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:background="@drawable/rectangle_421"
         android:entries="@array/location_arrays"
+        android:foreground="@drawable/downarrow"
+        android:foregroundGravity="right|center"
+        android:paddingLeft="20dp"
+        android:paddingRight="40dp"
         android:prompt="@string/donate_prompt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <Button
         android:id="@+id/submit_donate"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_width="144dp"
+        android:layout_height="58dp"
+        android:background="@drawable/rectangle_1470"
+        android:gravity="center_vertical|center_horizontal"
         android:text="@string/donate"
+        android:paddingBottom="5dp"
+        android:textColor="#E91E63"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <Button
+        android:id="@+id/yourfoodnav"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/ic_kitchen_white_18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/donatenav"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/ic_card_giftcard_white_48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/recipesnav"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/ic_room_service_white_3x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="362dp"
+        android:layout_height="524dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142"
+        app:srcCompat="@drawable/rectangle_1469" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Food or Beverage"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
