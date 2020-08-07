@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class donate extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class donate extends AppCompatActivity {
 
     private Spinner choose_loc;
     private Button btnDonate;
@@ -20,7 +22,7 @@ public class donate extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.donate);
 
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();

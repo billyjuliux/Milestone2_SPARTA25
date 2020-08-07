@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -50,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Button donatenav = (Button) findViewById(R.id.button3);
+        donatenav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toDonateLayout = new Intent(getApplicationContext(), donate.class);
+                startActivity(toDonateLayout);
+            }
+        });
 
         Resources res = getResources();
         yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
