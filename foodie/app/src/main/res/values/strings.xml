@@ -32,10 +32,10 @@
 
     <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
-        <item>Yayasan 1</item>
-        <item>Yayasan 2</item>
-        <item>Yayasan 3</item>
-        <item>Yayasan 4</item>
+        <item>Yayasan ASYNC</item>
+        <item>Yayasan SPARTA</item>
+        <item>Yayasan HMIF</item>
+        <item>Yayasan STEI</item>
     </string-array>
     <string name="donate">Donate</string>
 
