@@ -79,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
         ItemAdapter itemAdapter= new ItemAdapter(this, foodNames, foodTimes, counter);
         yourfoodListView.setAdapter(itemAdapter);
 
-        Button btnAdd = (Button) findViewById(R.id.btnAdd);
-
+        Button btnAdd = (Button) findViewById(R.id.button5);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
