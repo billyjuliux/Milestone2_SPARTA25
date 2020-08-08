@@ -18,6 +18,18 @@
         <item>expired</item>
     </string-array>
 
+    <string-array name="recommendedRecipes">
+        <item>Carrot</item>
+        <item>Milk</item>
+        <item>Potato</item>
+    </string-array>
+
+    <string-array name="popularRecipes">
+        <item>Carrot</item>
+        <item>Milk</item>
+        <item>Potato</item>
+    </string-array>
+
     <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
         <item>Yayasan 1</item>
