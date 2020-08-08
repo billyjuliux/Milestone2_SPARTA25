@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class Recipes extends AppCompatActivity {
 
@@ -14,7 +16,7 @@ public class Recipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
 
-        //Fungsi untuk pergi ke layout donate
+        //Function to go to donate layout
         final Button donateNav = (Button) findViewById(R.id.donatenav5);
         donateNav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,8 +26,8 @@ public class Recipes extends AppCompatActivity {
             }
         });
 
-        //Fungsi untuk pergi ke layout yourfood
-        final Button main = (Button) findViewById(R.id.yourfoodnav7);
+        //Function to go to main layout
+        final Button main = (Button) findViewById(R.id.yourfoodNav);
         main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,4 +36,51 @@ public class Recipes extends AppCompatActivity {
             }
         });
 
-}}
+        //Function to go to RecipesDetails - Recommended layout
+        final ImageButton details1 = (ImageButton) findViewById(R.id.recommendedRecipes1);
+        details1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
+                startActivity(toRecipesDetails);
+            }
+        });
+
+        final ImageButton details2 = (ImageButton) findViewById(R.id.recommendedRecipes2);
+        details2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
+                startActivity(toRecipesDetails);
+            }
+        });
+
+        final ImageButton details3 = (ImageButton) findViewById(R.id.recommendedRecipes3);
+        details3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
+                startActivity(toRecipesDetails);
+            }
+        });
+
+        //Function to go to RecipesDetails - Popular layout
+        final ImageView popularRecipes1 = (ImageView) findViewById(R.id.popularRecipes1);
+        popularRecipes1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
+                startActivity(toRecipesDetails);
+            }
+        });
+
+        final ImageView popularRecipes2 = (ImageView) findViewById(R.id.popularRecipes2);
+        popularRecipes2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
+                startActivity(toRecipesDetails);
+            }
+        });
+
+    }}
