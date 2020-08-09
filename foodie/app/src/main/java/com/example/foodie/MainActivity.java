@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ListView yourfoodListView;
     BroadcastReceiver minuteUpdateReceiver;
     ArrayList<Food> foodList;
+    EditText eAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +62,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        eAdd = (EditText) findViewById(R.id.eAdd);
         Button btnAdd = (Button) findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String getInput = eAdd.getText().toString();
+                if(getInput == null || getInput.trim().equals("")) {
+                    Toast.makeText(getBaseContext(), "Input Field is Empty", Toast.LENGTH_LONG).show();
+                }
+                else{
+                        Food newFood = new Food (getInput, 0);
+                        foodList.add(newFood);
 
-            }
+                        FoodAdapter adapter = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
+                        yourfoodListView.setAdapter(adapter);
+
+                        eAdd.setText("");
+                    }
+                }
         });
 
     }

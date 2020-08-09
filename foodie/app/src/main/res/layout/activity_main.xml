@@ -28,13 +28,13 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/eAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="@id/imageView3"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Enter a Food"
+            android:hint="Enter a Food"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"/>
 
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="450dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="262dp"
+        android:layout_marginBottom="100dp"
         android:layout_below="@id/linearlayout">
 
     </ListView>
