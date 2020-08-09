@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Menu;
 //import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class donate extends AppCompatActivity {
+public class donate extends Activity {
 
     private Spinner choose_loc, choose_food;
     private Button btnDonate;
@@ -22,14 +23,15 @@ public class donate extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donate);
-        
-        addListenerOnSpinnerItemSelection();
+
+        btnDonate = (Button) findViewById(R.id.submit_donate);
+        btnDonate.setOnClickListener(resetBtn);
     }
 
-    public void addListenerOnSpinnerItemSelection() {
-        choose_loc = (Spinner) findViewById(R.id.donate_spinner);
-        choose_food = (Spinner) findViewById(R.id.food_spinner);
-        choose_loc.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-        choose_food.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
+    View.OnClickListener resetBtn = new View.OnClickListener() {
+        public void onClick(View view) {
+            choose_food.setSelection(0);
+            choose_loc.setSelection(1);
+        }
+    };
 }
