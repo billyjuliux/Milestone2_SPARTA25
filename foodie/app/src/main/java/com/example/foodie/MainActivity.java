@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView yourfoodListView;
     ArrayList<Food> foodList;
-    String[] foodNames, foodTimes;
     BroadcastReceiver minuteUpdateReceiver;
-    int counter;
     EditText eAdd;
 
     @Override
@@ -93,11 +91,15 @@ public class MainActivity extends AppCompatActivity {
         minuteUpdateReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (counter<8) {
-                    counter++;
+                for (int i=0 ; i<foodList.size() ; i++){
+                    if (foodList.get(i).getAge()<7) {
+                        foodList.get(i).setAge(foodList.get(i).getAge()+1);
+                    }
                 }
-                ItemAdapter itemAdapter= new ItemAdapter(context, foodNames, foodTimes, counter);
-                yourfoodListView.setAdapter(itemAdapter);
+
+                FoodAdapter adapter = new FoodAdapter(context, R.layout.listview_detail, foodList);
+                yourfoodListView.setAdapter(adapter);
+
             }
         };
         registerReceiver(minuteUpdateReceiver, intentFilter);
