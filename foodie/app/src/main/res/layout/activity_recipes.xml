@@ -50,13 +50,9 @@
         android:id="@+id/imageView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
-        app:srcCompat="@drawable/redrectopparentcropped" />
+        app:srcCompat="@drawable/redrectopparentcropped"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-12dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -203,5 +199,17 @@
         app:layout_constraintEnd_toStartOf="@+id/recipesnav5"
         app:layout_constraintStart_toEndOf="@+id/donatenav5"
         app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="168dp"
+        android:layout_height="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/recipesnav5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popularRecipes2"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/rectangle_420" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
