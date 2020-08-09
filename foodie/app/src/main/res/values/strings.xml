@@ -18,13 +18,32 @@
         <item>expired</item>
     </string-array>
 
+    <string-array name="recommendedRecipes">
+        <item>Carrot</item>
+        <item>Milk</item>
+        <item>Potato</item>
+    </string-array>
+
+    <string-array name="popularRecipes">
+        <item>Carrot</item>
+        <item>Milk</item>
+        <item>Potato</item>
+    </string-array>
+
     <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
+<<<<<<< HEAD
         <item>Choose where do you want to donate</item>
         <item>Yayasan 1</item>
         <item>Yayasan 2</item>
         <item>Yayasan 3</item>
         <item>Yayasan 4</item>
+=======
+        <item>Yayasan ASYNC</item>
+        <item>Yayasan SPARTA</item>
+        <item>Yayasan HMIF</item>
+        <item>Yayasan STEI</item>
+>>>>>>> 33f5f951a20160398b599b5387eeeab4c2bbd3da
     </string-array>
     <string name="donate">Donate</string>
     <string name="food_prompt">Choose Food or Beverages</string>

@@ -3,6 +3,7 @@ package com.example.foodie;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -13,12 +14,61 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     ListView yourfoodListView;
-    String[] foodNames, foodTimes;
     BroadcastReceiver minuteUpdateReceiver;
-    int counter;
+    ArrayList<Food> foodList;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Food carrot = new Food("Carrot" , 0);
+        Food milk = new Food("Milk" , 3);
+        Food potato = new Food("Potato" , 1);
+
+        foodList = new ArrayList<Food>();
+        foodList.add(carrot);
+        foodList.add(milk);
+        foodList.add(potato);
+
+        yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
+        FoodAdapter adapter = new FoodAdapter(this, R.layout.listview_detail, foodList);
+        yourfoodListView.setAdapter(adapter);
+
+
+        final Button donatenav = (Button) findViewById(R.id.button3);
+        donatenav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toDonateLayout = new Intent(getApplicationContext(), donate.class);
+                startActivity(toDonateLayout);
+            }
+        });
+
+        final Button recipesNav = (Button) findViewById(R.id.recipesNav);
+        recipesNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesLayout = new Intent(getApplicationContext(), Recipes.class);
+                startActivity(toRecipesLayout);
+            }
+        });
+
+
+        Button btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+    }
 
     public void startMinuteUpdater(){
         IntentFilter intentFilter = new IntentFilter();
@@ -26,11 +76,15 @@ public class MainActivity extends AppCompatActivity {
         minuteUpdateReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (counter<8) {
-                    counter++;
+                for (int i=0 ; i<foodList.size() ; i++){
+                    if (foodList.get(i).getAge()<8) {
+                        foodList.get(i).setAge(foodList.get(i).getAge()+1);
+                    }
                 }
-                ItemAdapter itemAdapter= new ItemAdapter(context, foodNames, foodTimes, counter);
-                yourfoodListView.setAdapter(itemAdapter);
+
+                FoodAdapter adapter = new FoodAdapter(context, R.layout.listview_detail, foodList);
+                yourfoodListView.setAdapter(adapter);
+
             }
         };
         registerReceiver(minuteUpdateReceiver, intentFilter);
@@ -45,30 +99,5 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         unregisterReceiver(minuteUpdateReceiver);
     }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        final Button donatenav = (Button) findViewById(R.id.button3);
-        donatenav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toDonateLayout = new Intent(getApplicationContext(), donate.class);
-                startActivity(toDonateLayout);
-            }
-        });
-
-        Resources res = getResources();
-        yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
-        foodNames = res.getStringArray(R.array.foodNames);
-        foodTimes = res.getStringArray(R.array.foodTimes);
-
-
-
-    }
-
 
 }

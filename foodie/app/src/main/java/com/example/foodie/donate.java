@@ -3,6 +3,7 @@ package com.example.foodie;
 //import java.util.ArrayList;
 //import java.util.List;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +25,24 @@ public class donate extends AppCompatActivity {
         setContentView(R.layout.donate);
         
         addListenerOnSpinnerItemSelection();
+
+        Button toRecipes = (Button) findViewById(R.id.recipesnav);
+        toRecipes.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toRecipes = new Intent(getApplicationContext(), Recipes.class);
+                startActivity(toRecipes);
+            }
+        });
+
+        Button toYourFood = (Button) findViewById(R.id.yourfoodnav);
+        toYourFood.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toYourFood = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(toYourFood);
+            }
+        });
     }
 
     public void addListenerOnSpinnerItemSelection() {
@@ -33,3 +52,4 @@ public class donate extends AppCompatActivity {
         choose_food.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
 }
+
