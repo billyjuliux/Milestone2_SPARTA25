@@ -14,44 +14,32 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     ListView yourfoodListView;
-    String[] foodNames, foodTimes;
     BroadcastReceiver minuteUpdateReceiver;
-    int counter;
-
-    public void startMinuteUpdater(){
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_TIME_TICK);
-        minuteUpdateReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (counter<8) {
-                    counter++;
-                    ItemAdapter itemAdapter= new ItemAdapter(context, foodNames, foodTimes, counter);
-                    yourfoodListView.setAdapter(itemAdapter);
-                }
-            }
-        };
-        registerReceiver(minuteUpdateReceiver, intentFilter);
-    }
-
-    protected void onResume(){
-        super.onResume();
-        startMinuteUpdater();
-    }
-
-    protected void onPause(){
-        super.onPause();
-        unregisterReceiver(minuteUpdateReceiver);
-    }
-
+    ArrayList<Food> foodList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Food carrot = new Food("Carrot" , 0);
+        Food milk = new Food("Milk" , 3);
+        Food potato = new Food("Potato" , 1);
+
+        foodList = new ArrayList<Food>();
+        foodList.add(carrot);
+        foodList.add(milk);
+        foodList.add(potato);
+
+        yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
+        FoodAdapter adapter = new FoodAdapter(this, R.layout.listview_detail, foodList);
+        yourfoodListView.setAdapter(adapter);
+
 
         final Button donatenav = (Button) findViewById(R.id.button3);
         donatenav.setOnClickListener(new View.OnClickListener() {
@@ -71,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Resources res = getResources();
-        yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
-        foodNames = res.getStringArray(R.array.foodNames);
-        foodTimes = res.getStringArray(R.array.foodTimes);
-
-        ItemAdapter itemAdapter= new ItemAdapter(this, foodNames, foodTimes, counter);
-        yourfoodListView.setAdapter(itemAdapter);
 
         Button btnAdd = (Button) findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -89,5 +70,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void startMinuteUpdater(){
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_TIME_TICK);
+        minuteUpdateReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                for (int i=0 ; i<foodList.size() ; i++){
+                    if (foodList.get(i).getAge()<8) {
+                        foodList.get(i).setAge(foodList.get(i).getAge()+1);
+                    }
+                }
+
+                FoodAdapter adapter = new FoodAdapter(context, R.layout.listview_detail, foodList);
+                yourfoodListView.setAdapter(adapter);
+
+            }
+        };
+        registerReceiver(minuteUpdateReceiver, intentFilter);
+    }
+
+    protected void onResume(){
+        super.onResume();
+        startMinuteUpdater();
+    }
+
+    protected void onPause(){
+        super.onPause();
+        unregisterReceiver(minuteUpdateReceiver);
+    }
 
 }
