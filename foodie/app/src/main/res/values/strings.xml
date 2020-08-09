@@ -20,11 +20,13 @@
 
     <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
+        <item>Choose where do you want to donate</item>
         <item>Yayasan 1</item>
         <item>Yayasan 2</item>
         <item>Yayasan 3</item>
         <item>Yayasan 4</item>
     </string-array>
     <string name="donate">Donate</string>
+    <string name="food_prompt">Choose Food or Beverages</string>
 
 </resources>
