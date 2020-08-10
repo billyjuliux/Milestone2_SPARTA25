@@ -21,12 +21,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
 
     ListView yourfoodListView;
     ArrayList<Food> foodList;
     BroadcastReceiver minuteUpdateReceiver;
-    EditText eAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 builder.setMessage("Delete this Food from list?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        try{
+                        try {
                             foodList.remove(indexFood);
-                        }catch(Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                         FoodAdapter adapter = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
@@ -92,38 +91,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        eAdd = (EditText) findViewById(R.id.eAdd);
-        Button btnAdd = (Button) findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+
+        Button btnAdd1 = (Button) findViewById(R.id.btn1);
+        btnAdd1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String getInput = eAdd.getText().toString();
-                if(getInput == null || getInput.trim().equals("")) {
-                    Toast.makeText(getBaseContext(), "Input Field is Empty", Toast.LENGTH_LONG).show();
-                }
-                else{
-                    Food newFood = new Food (getInput, 0);
-                    foodList.add(newFood);
-
-                    FoodAdapter adapter = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
-                    yourfoodListView.setAdapter(adapter);
-
-                    eAdd.setText("");
-                }
+                openDialog();
             }
         });
 
+
     }
 
-    public void startMinuteUpdater(){
+    public void openDialog(){
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "Example Dialog");
+    }
+
+    @Override
+    public void applyAddFood(String foodName) {
+        Food newFood = new Food (foodName, 0);
+        foodList.add(newFood);
+
+        FoodAdapter adapter = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
+        yourfoodListView.setAdapter(adapter);
+    }
+
+    public void startMinuteUpdater() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_TIME_TICK);
         minuteUpdateReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                for (int i=0 ; i<foodList.size() ; i++){
-                    if (foodList.get(i).getAge()<7) {
-                        foodList.get(i).setAge(foodList.get(i).getAge()+1);
+                for (int i = 0; i < foodList.size(); i++) {
+                    if (foodList.get(i).getAge() < 7) {
+                        foodList.get(i).setAge(foodList.get(i).getAge() + 1);
                     }
                 }
 
@@ -134,34 +136,15 @@ public class MainActivity extends AppCompatActivity {
         };
         registerReceiver(minuteUpdateReceiver, intentFilter);
 
-        Button button2 = (Button) findViewById(R.id.btn1);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddActivity.class));
-            }
-        });
+    }
 
-        if (getIntent().hasExtra("com.example.foodie.SOMETHING")) {
-            String input1 = getIntent().getExtras().getString("com.example.foodie.SOMETHING");
+        protected void onResume () {
+            super.onResume();
+            startMinuteUpdater();
+        }
 
-            Food nFood = new Food(input1, 0);
-            foodList.add(nFood);
-
-            FoodAdapter adapter1 = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
-            yourfoodListView.setAdapter(adapter1);
-
-            eAdd.setText("");
+        protected void onPause () {
+            super.onPause();
+            unregisterReceiver(minuteUpdateReceiver);
         }
     }
-
-    protected void onResume(){
-        super.onResume();
-        startMinuteUpdater();
-    }
-
-    protected void onPause(){
-        super.onPause();
-        unregisterReceiver(minuteUpdateReceiver);
-    }
-}

@@ -17,45 +17,14 @@
         android:layout_marginTop="-90dp"
         />
 
-    <LinearLayout
-        android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_below="@id/imageView3">
-
-
-        <EditText
-            android:id="@+id/eAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="@id/imageView3"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter a Food"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="56dp"
-            android:layout_marginRight="56dp"
-            android:text="Add"/>
-
-
-    </LinearLayout>
 
     <ListView
         android:id="@+id/yourfoodListView"
         android:layout_width="wrap_content"
         android:layout_height="450dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_below="@id/linearlayout"
+        android:layout_marginBottom="75dp"
+        android:layout_below="@id/imageView3"
         android:divider="@null"
         android:dividerHeight="0dp"
         >
@@ -116,18 +85,17 @@
         android:layout_alignTop="@+id/textView3"
         android:layout_marginTop="15dp"
         app:srcCompat="@drawable/ic_kitchen_white_18dp"
-        tools:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:text="Button" />
+        android:layout_marginRight="30dp"
+        android:background="@drawable/compose"/>
 
 
 </RelativeLayout>
