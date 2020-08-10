@@ -1,15 +1,18 @@
 package com.example.foodie;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentProviderClient;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +45,33 @@ public class MainActivity extends AppCompatActivity {
         yourfoodListView = (ListView) findViewById(R.id.yourfoodListView);
         FoodAdapter adapter = new FoodAdapter(this, R.layout.listview_detail, foodList);
         yourfoodListView.setAdapter(adapter);
+
+        yourfoodListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, final int indexFood, long l) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                builder.setMessage("Delete this Food from list?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        try{
+                            foodList.remove(indexFood);
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
+                        FoodAdapter adapter = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
+                        yourfoodListView.setAdapter(adapter);
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
 
 
         final Button donatenav = (Button) findViewById(R.id.button3);
