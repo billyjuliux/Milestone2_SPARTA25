@@ -18,7 +18,6 @@
         <item>expired</item>
     </string-array>
 
-    <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
         <item>Choose where do you want to donate</item>
         <item>Yayasan 1</item>
