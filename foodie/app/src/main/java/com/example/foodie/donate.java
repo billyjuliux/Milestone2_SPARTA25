@@ -24,12 +24,33 @@ public class donate extends AppCompatActivity {
         choose_food = (Spinner) findViewById(R.id.food_spinner);
         btnDonate = (Button) findViewById(R.id.submit_donate);
 
+        // Ubah target activity MainActivity -> AddActivity
         Button addButton = (Button) findViewById(R.id.addbutton);
         addButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toAddFood = new Intent(getApplicationContext(), MainActivity.class);
+                Intent toAddFood = new Intent(getApplicationContext(), AddActivity.class);
                 startActivity(toAddFood);
+            }
+        });
+
+        // Link ke recipes activity
+        Button toRecipes = (Button) findViewById(R.id.recipesnav);
+        toRecipes.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toRecipes = new Intent(getApplicationContext(), Recipes.class);
+                startActivity(toRecipes);
+            }
+        });
+
+        // Link ke main activity -> your food
+        Button toyourFood = (Button) findViewById(R.id.yourfoodnav);
+        toyourFood.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toYourFood = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(toYourFood);
             }
         });
 
