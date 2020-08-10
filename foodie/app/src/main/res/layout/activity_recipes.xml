@@ -211,52 +211,30 @@
         app:layout_constraintVertical_bias="0.32999998"
         app:srcCompat="@drawable/rectangle_420" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="64dp"
-        android:layout_height="54dp"
-        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes1"
-        app:layout_constraintEnd_toEndOf="@+id/popularRecipes1"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/popularRecipes1"
-        app:layout_constraintTop_toTopOf="@+id/popularRecipes1"
-        app:srcCompat="@drawable/gambar" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="64dp"
-        android:layout_height="54dp"
-        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes2"
-        app:layout_constraintEnd_toEndOf="@+id/popularRecipes2"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
-        app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
-        app:srcCompat="@drawable/gambar" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jus Apel"
+        android:text="Sandwich Telur Dadar Sosis"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/popularRecipes1"
         app:layout_constraintEnd_toEndOf="@+id/popularRecipes1"
-        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="@+id/popularRecipes1"
         app:layout_constraintTop_toTopOf="@+id/popularRecipes1"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jus Apel"
+        android:text="Sandwich Telur Dadar Sosis"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/popularRecipes2"
         app:layout_constraintEnd_toEndOf="@+id/popularRecipes2"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
         app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
         app:layout_constraintVertical_bias="0.308" />
@@ -265,10 +243,10 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jus Apel adalah jus yang sehat"
+        android:text="Terdiri dari roti, telur dan sosis"
         app:layout_constraintBottom_toBottomOf="@+id/popularRecipes2"
         app:layout_constraintEnd_toEndOf="@+id/popularRecipes2"
-        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
         app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
         app:layout_constraintVertical_bias="0.697" />
@@ -277,12 +255,36 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jus Apel adalah jus yang sehat"
+        android:text="Terdiri dari roti, telur dan sosis"
         app:layout_constraintBottom_toBottomOf="@+id/popularRecipes1"
         app:layout_constraintEnd_toEndOf="@+id/popularRecipes1"
-        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="@+id/popularRecipes1"
         app:layout_constraintTop_toTopOf="@+id/popularRecipes1"
         app:layout_constraintVertical_bias="0.709" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="58dp"
+        android:layout_height="60dp"
+        android:foreground="@drawable/sandwich"
+        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes1"
+        app:layout_constraintEnd_toEndOf="@+id/popularRecipes1"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="@+id/popularRecipes1"
+        app:layout_constraintTop_toTopOf="@+id/popularRecipes1"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="62dp"
+        android:layout_height="52dp"
+        android:foreground="@drawable/sandwich"
+        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes2"
+        app:layout_constraintEnd_toEndOf="@+id/popularRecipes2"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
+        app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
+        app:layout_constraintVertical_bias="0.471" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

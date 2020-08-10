@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipesDetails">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="361dp"
+        android:layout_height="142dp"
+        app:srcCompat="@drawable/redrectopparentcropped"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-48dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="272dp"
+        android:layout_height="45dp"
+        android:text="Sandwich"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="66dp"
+        android:layout_height="56dp"
+        android:background="#00FFFFFF"
+        android:clickable="true"
+        android:foreground="@drawable/abc_vector_test"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="262dp"
+        android:layout_height="239dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.291">
+
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="306dp"
+            android:layout_height="246dp"
+            android:text="Sandwich bisa menjadi salah satu makanan pokok yang mudah untuk dibuat.
+            \nBahan yang diperlukan adalah :
+    \n- 2 buah roti tawar
+    \n- 1 buah sosis, iris sedang bundar
+    \n- 1 butir telur ayam, kocok
+    \n- Bawang bombai sesuai selera, iris
+    \n- Garam, lada halus, secukupnya
+    \n- Mayones, keju, dan saos
+    \nCara membuatnya cukup mudah,
+    \nPertama, Tumis bawang bombai setengah matang. \nMasukkan bawang bombai, sosis, ke dalam kocokan telur. \nBeri garam dan lada, aduk rata.
+    \nKedua, Panaskan minyak goreng secukupnya. \nDadar campuran telur sampai matang.
+    \nKetiga, Tata telur dadar di atas roti tawar. \nBakar sandwich sampai kecokelatan dan terakhir \nAngkat, Sandwich lezat siap disantap."
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.853" />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="256dp"
+        android:layout_height="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358"
+        app:srcCompat="@drawable/sandwich" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
