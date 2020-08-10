@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -88,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (getIntent().hasExtra("com.example.foodie.SOMETHING")) {
+            String newFood = getIntent().getExtras().getString("com.example.foodie.SOMETHING"); //abis ini udh bisa dipake hasil input usernya, do as u wish ;)
+
+        };
     }
 
 

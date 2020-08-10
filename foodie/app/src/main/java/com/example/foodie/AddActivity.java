@@ -16,25 +16,18 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        if (getIntent().hasExtra("com.example.foodie.yes")) {
-            TextView tv = (TextView) findViewById(R.id.textView2);
-            String text = getIntent().getExtras().getString("com.example.foodie.yes");
-            tv.setText(text);
-
-
-        }
         Button buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddActivity.this, MainActivity.class));
-                //EditText foodInput = (EditText) findViewById(R.id.foodInput);
-               // String input = foodInput.getText().toString();
+                EditText foodInput = (EditText) findViewById(R.id.foodInput);
+                String input = foodInput.getText().toString();
 
-               // Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-               // startIntent.putExtra("com.example.foodie.SOMETHING", input);
-                //startActivity(startIntent);
+                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startIntent.putExtra("com.example.foodie.SOMETHING", input);
+                startActivity(startIntent);
             }
         });
+
     }
 }
