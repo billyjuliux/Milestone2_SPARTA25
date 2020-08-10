@@ -133,6 +133,26 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         registerReceiver(minuteUpdateReceiver, intentFilter);
+
+        Button button2 = (Button) findViewById(R.id.btn1);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddActivity.class));
+            }
+        });
+
+        if (getIntent().hasExtra("com.example.foodie.SOMETHING")) {
+            String input1 = getIntent().getExtras().getString("com.example.foodie.SOMETHING");
+
+            Food nFood = new Food(input1, 0);
+            foodList.add(nFood);
+
+            FoodAdapter adapter1 = new FoodAdapter(MainActivity.this, R.layout.listview_detail, foodList);
+            yourfoodListView.setAdapter(adapter1);
+
+            eAdd.setText("");
+        }
     }
 
     protected void onResume(){
