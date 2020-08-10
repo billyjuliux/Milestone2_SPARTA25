@@ -144,5 +144,4 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         unregisterReceiver(minuteUpdateReceiver);
     }
-
 }
