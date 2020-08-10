@@ -83,9 +83,10 @@
         android:id="@+id/imageView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/redrectopparentcropped"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="-8dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/redrectopparentcropped" />
 
     <TextView
         android:id="@+id/textView5"

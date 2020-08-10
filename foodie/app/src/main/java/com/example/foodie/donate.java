@@ -24,6 +24,26 @@ public class donate extends AppCompatActivity {
         choose_food = (Spinner) findViewById(R.id.food_spinner);
         btnDonate = (Button) findViewById(R.id.submit_donate);
 
+        //Function to go to recipes layout
+        final Button recipesnav = (Button) findViewById(R.id.recipesnav);
+        recipesnav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecipesLayout = new Intent(getApplicationContext(), Recipes.class);
+                startActivity(toRecipesLayout);
+            }
+        });
+
+        //Function to go to main layout
+        final Button main = (Button) findViewById(R.id.yourfoodnav);
+        main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toMainLayout = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(toMainLayout);
+            }
+        });
+
         Button addButton = (Button) findViewById(R.id.addbutton);
         addButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -35,6 +55,7 @@ public class donate extends AppCompatActivity {
 
         btnDonate.setOnClickListener(resetBtn);
         }
+
 
     View.OnClickListener resetBtn = new View.OnClickListener() {
         public void onClick(View view) {
