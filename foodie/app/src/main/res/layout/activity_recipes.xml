@@ -7,16 +7,6 @@
     android:background="#FFFFFF"
     tools:context=".Recipes">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jus Apel"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="394dp" />
-
     <ImageView
         android:id="@+id/recommendedRecipes1"
         android:layout_width="84dp"
@@ -269,5 +259,29 @@
         app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
         app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
         app:layout_constraintVertical_bias="0.308" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jus Apel adalah jus yang sehat"
+        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes2"
+        app:layout_constraintEnd_toEndOf="@+id/popularRecipes2"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toStartOf="@+id/popularRecipes2"
+        app:layout_constraintTop_toTopOf="@+id/popularRecipes2"
+        app:layout_constraintVertical_bias="0.697" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jus Apel adalah jus yang sehat"
+        app:layout_constraintBottom_toBottomOf="@+id/popularRecipes1"
+        app:layout_constraintEnd_toEndOf="@+id/popularRecipes1"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toStartOf="@+id/popularRecipes1"
+        app:layout_constraintTop_toTopOf="@+id/popularRecipes1"
+        app:layout_constraintVertical_bias="0.709" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
