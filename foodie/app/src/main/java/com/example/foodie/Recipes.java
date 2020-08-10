@@ -69,8 +69,8 @@ public class Recipes extends AppCompatActivity {
         popularRecipes1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
-                startActivity(toRecipesDetails);
+                Intent toRecipesDetails1 = new Intent(getApplicationContext(), RecipesDetails1.class);
+                startActivity(toRecipesDetails1);
             }
         });
 
@@ -78,8 +78,8 @@ public class Recipes extends AppCompatActivity {
         popularRecipes2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toRecipesDetails = new Intent(getApplicationContext(), RecipesDetails.class);
-                startActivity(toRecipesDetails);
+                Intent toRecipesDetails1 = new Intent(getApplicationContext(), RecipesDetails1.class);
+                startActivity(toRecipesDetails1);
             }
         });
 
