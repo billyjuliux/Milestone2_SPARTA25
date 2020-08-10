@@ -37,7 +37,7 @@ public class Recipes extends AppCompatActivity {
         });
 
         //Function to go to RecipesDetails - Recommended layout
-        final ImageButton details1 = (ImageButton) findViewById(R.id.recommendedRecipes1);
+        final ImageView details1 = (ImageView) findViewById(R.id.recommendedRecipes1);
         details1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class Recipes extends AppCompatActivity {
             }
         });
 
-        final ImageButton details2 = (ImageButton) findViewById(R.id.recommendedRecipes2);
+        final ImageView details2 = (ImageView) findViewById(R.id.recommendedRecipes2);
         details2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +55,7 @@ public class Recipes extends AppCompatActivity {
             }
         });
 
-        final ImageButton details3 = (ImageButton) findViewById(R.id.recommendedRecipes3);
+        final ImageView details3 = (ImageView) findViewById(R.id.recommendedRecipes3);
         details3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
