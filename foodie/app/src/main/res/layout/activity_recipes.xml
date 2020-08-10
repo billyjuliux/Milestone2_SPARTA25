@@ -84,8 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/redrectopparentcropped"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-12dp" />
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="-8dp" />
 
     <TextView
         android:id="@+id/textView5"

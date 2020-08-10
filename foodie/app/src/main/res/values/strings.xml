@@ -18,22 +18,6 @@
         <item>expired</item>
     </string-array>
 
-    <string-array name="recommendedRecipes">
-        <item>Carrot</item>
-        <item>Milk</item>
-        <item>Potato</item>
-    </string-array>
-
-    <string-array name="popularRecipes">
-        <item>Anda bisa membuat apel yang anda miliki menjadi jus apel.
-            Dengan berbagai manfaat, jus apel akan membuat tubuh anda semakin sehat.
-            Untuk membuat jus apel, anda hanya perlu memotong-motong apel dan memasukannya ke dalam blender.
-            Kemudian, masukkan air secukupnya ke dalam blender, lalu nyalakan blender.
-            Setelah selesai, tuang jus apel ke gelas, tambahkan es batu jika mau.
-            Selesai! Jus apel nikmat siap anda minum.</item>
-    </string-array>
-
-    <string name="donate_prompt">Choose a location</string>
     <string-array name="location_arrays">
         <item>Choose where do you want to donate</item>
         <item>Yayasan 1</item>
